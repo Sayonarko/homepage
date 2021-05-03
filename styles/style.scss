@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+//colors
+$background: #fff;
+$secondary: #e5e5e5;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    background-color: $secondary;
+    overflow-y: scroll;
+}
+
+.row {
+    display: flex;
+    flex-wrap: no-wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.col {
+    margin-left: 15px;
+    margin-right: 15px;
+    width: 100%;
+}
+
+h1 {
+    font-size: 42px;
+    font-weight: 600;
+
+    @media (max-width: 767px) {
+        font-size: 25px;
+    }
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 10px;
+
+    @media (max-width: 767px) {
+        font-size: 20px;
+    }
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+
+.container {
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+
+
+    @media (min-width: 768px) {
+        max-width: 740px;
+    }
+
+    @media (min-width: 992px) {
+        max-width: 950px;
+    }
+
+    @media (min-width: 1200px) {
+        max-width: 1170px;
+    }
+}
+
+
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fade-in 0.3s 1 forwards;
+
+
+    .modal__body {
+        flex-grow: 1;
+        background-color: $background;
+        max-width: 800px;
+        border-radius: 20px;
+        padding: 30px;
+        overflow: hidden;
+
+        @media (max-width: 767px) {
+            padding: 15px;
+        }
+
+        img {
+            width: 100%;
+        }
+
+    }
+}
+
+
+.header {
+    .header__content {
+        display: flex;
+        background-color: $background;
+        padding: 30px;
+        border-radius: 20px;
+        margin: 30px 0;
+        box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.1);
+        flex-wrap: wrap;
+
+        @media (max-width: 767px) {
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            margin: 15px 0;
+        }
+
+        .avatar {
+            overflow: hidden;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            margin-right: 20px;
+            cursor: pointer;
+
+            @media (max-width: 767px) {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+
+            img {
+                width: 100%;
+            }
+
+        }
+
+        .info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .info__title {
+                @media (max-width: 767px) {
+                    text-align: center;
+                }
+
+            }
+
+            strong {
+                @media (max-width: 767px) {
+                    text-align: center;
+                }
+            }
+
+            .info__subtitle {
+                margin-top: 5px;
+                color: $secondary;
+            }
+
+        }
+
+        .socials {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            @media (max-width: 991px) {
+                margin-top: 20px;
+                justify-content: flex-start;
+            }
+
+            @media (max-width: 767px) {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .socials__link {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 40px;
+                height: 40px;
+                margin-left: 15px;
+
+                @media (max-width: 767px) {
+                    width: 25px;
+                    height: 25px;
+                    margin-left: 10px;
+                }
+
+                svg {
+
+                    path {
+                        transition: all 0.3s ease;
+                        fill: $secondary;
+                    }
+                }
+
+                &:hover {
+                    svg {
+                        path {
+                            fill: rgb(90, 90, 255);
+                        }
+                    }
+                }
+
+
+
+            }
+        }
+    }
+}
+
+.main {
+    .top-row {
+
+        @media (max-width: 767px) {
+            flex-wrap: wrap;
+        }
+
+        .col {
+            width: 50%;
+            display: flex;
+
+            @media (max-width: 767px) {
+                width: 100%;
+            }
+
+        }
+    }
+
+    .content {
+        flex-grow: 1;
+        background-color: $background;
+        border-radius: 20px;
+        padding: 30px;
+        margin-bottom: 30px;
+        box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.1);
+
+        .scars {
+
+            .scars__item {
+                list-style: none;
+                display: flex;
+
+                &::before {
+                    display: block;
+                    content: "";
+                    padding: 7px;
+                    margin-right: 10px;
+                    background: url("../img/icons/animal-track.svg") center center no-repeat;
+                }
+
+                & + .scars__item {
+                    margin-top: 10px;
+                }
+            }
+        }
+
+        .interest {
+            text-transform: uppercase;
+        }
+
+        .quote {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 15px;
+            position: relative;
+            font-style: italic;
+
+
+            &:before {
+                position: absolute;
+                top: 0;
+                left: -10px;
+                display: block;
+                content: "";
+                width: 5px;
+                height: 100%;
+                background-color: $secondary;
+            }
+        }
+
+        .quote__name {
+            display: block;
+            text-align: right;
+            font-weight: 500;
+        }
+
+    }
+}
+
+.hide {
+    display: none;
+}
+
+.overflow-block {
+    overflow: hidden;
+    padding-right: 16px;
+
+    @media (max-width: 767px) {
+        padding-right: 0;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
